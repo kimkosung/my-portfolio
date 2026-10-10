@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import {Footer, Header} from "@/components/index";
 
 const projects = [
   { title: "프로젝트 1", description: "프로젝트 설명을 적어주세요.", link: "#" },

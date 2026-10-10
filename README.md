@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 개발자 김고성의 포트폴리오
 
-## Getting Started
+개발자 김고성의 개인 포트폴리오 사이트입니다. 현재 개발 중이고 지속적으로 업데이트 후 배포될 예정입니다.
+배포 주소: (배포 후 작성 예정)
 
-First, run the development server:
+## 목적
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+프로젝트와 작업물을 한곳에 정리하고, 직접 설계하고 만든 결과물로 저에 대한 소개를 위해 만들고 있습니다.
+
+## 기술 스택
+
+| 구분 | 사용 기술 |
+| --- | --- |
+| Framework | Next.js (App Router 기반) |
+| Language | TypeScript |
+| Styling | CSS Modules |
+| Deploy | Vercel (예정) |
+
+## 페이지 구성
+
+- **Home**: 소개, 프로젝트 목록, 연락처
+- **Project 상세**: 프로젝트별 설명 페이지 (예정)
+
+## 현재 구현된 것
+
+- 헤더 (스크롤 반응, 앵커 네비게이션)
+- 메인 페이지 기본 레이아웃
+- 프로젝트 카드 목록
+
+## 추가 예정
+
+- 프로젝트 상세 페이지
+- 다크모드 대응
+- 반응형 레이아웃 개선(모바일 환경 개선)
+- 페이지 전환 및 스크롤 애니메이션
+- SEO 메타데이터 설정
+- Vercel 배포
+
+## 폴더 구조
+
+```
+app/
+├── components/     # 공통 컴포넌트 (Header 등)
+├── layout.tsx      # 루트 레이아웃
+├── page.tsx        # 메인 페이지
+├── page.module.css
+└── globals.css
+public/             # 정적 파일
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 실행 방법
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Node.js Version 18 이상이 필요합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+http://localhost:3000 에서 확인할 수 있습니다.
 
-To learn more about Next.js, take a look at the following resources:
+프로덕션 빌드는 아래 순서로 실행합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 연락처(Contact)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Email: iamgosung@gmail.com
+- GitHub: kimkosung(kando)

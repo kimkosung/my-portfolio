@@ -144,15 +144,15 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 }
 
 .intro {
   margin: 0;
   font-size: clamp(1.25rem, 2.2vw, 1.6rem);
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: -0.05em;
 }
 
 .block {
@@ -189,7 +189,6 @@
 
 .tag:hover {
   transform: translateY(-2px);
-  border-color: var(--accent);
 }
 
 .skill {

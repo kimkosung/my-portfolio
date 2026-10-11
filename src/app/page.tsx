@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import {Footer, Header} from "@/components/index";
+import UserProfile from "@/sections/UserProfile";
 
 const projects = [
   { title: "프로젝트 1", description: "프로젝트 설명을 적어주세요.", link: "#" },
@@ -11,12 +12,8 @@ export default function Home() {
   return (
     <>
       <Header />
+      <UserProfile />
       <main className={styles.main}>
-        <section className={styles.hero}>
-          <h1>안녕하세요, 김고성입니다.</h1>
-          <p>프론트엔드 개발자를 꿈꾸고 있습니다.</p>
-        </section>
-
         <section id="about" className={styles.section}>
           <h2>About</h2>
           <p>자기소개를 여기에 작성하세요.</p>

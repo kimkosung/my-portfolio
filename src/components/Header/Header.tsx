@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./page.module.css";
+
+const IMG_URL = "/kks_logo.png"; // 이미지 경로를 상수로 정의
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,7 +23,7 @@ export default function Header() {
         className={`${styles.headerContent} ${scrolled ? styles.scrolled : ""}`}
       >
         <Link href="/" className={styles.logo}>
-          KOSUNG
+          <Image src={IMG_URL} alt="Logo" width={76} height={50} />
         </Link>
 
         <nav className={styles.nav}>

@@ -37,7 +37,7 @@ export default function Home() {
         <section id="contact" className={styles.section}>
           <h2>Contact</h2>
           <p>
-            이메일: <a href="mailto:hello@example.com">iamgosung@gmail.com</a>
+            이메일: <a href="mailto:iamgosung@gmail.com">iamgosung@gmail.com</a>
           </p>
         </section>
       </main>

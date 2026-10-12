@@ -5,18 +5,18 @@ export default function UserProfile() {
   return (
     <section id="profile" className={styles.section}>
       <div className={styles.container}>
-        <p className={styles.eyebrow}>Profile</p>
+        <header className={styles.header}>
+          <p className={styles.status}>
+            <span className={styles.dot} aria-hidden="true" />
+            {profile.status[0]}
+          </p>
+          <h1 className={styles.name}>{profile.name}</h1>
+          <p className={styles.role}>{profile.role}</p>
+        </header>
 
-        <div className={styles.layout}>
-          {/* 왼쪽: 기본 정보 카드 */}
-          <aside className={styles.card}>
-            <h2 className={styles.name}>{profile.name}</h2>
-            <p className={styles.role}>{profile.role}</p>
-
-            <span className={styles.status}>
-              <span className={styles.dot} />
-              {profile.status[0]}
-            </span>
+        <div className={styles.body}>
+          <div className={styles.lead}>
+            <p className={styles.intro}>{profile.intro}</p>
 
             <dl className={styles.info}>
               {profile.info.map((item) => (
@@ -32,39 +32,30 @@ export default function UserProfile() {
                 </div>
               ))}
             </dl>
-          </aside>
+          </div>
 
-          {/* 오른쪽: 소개 / 관심 분야 / 스킬 */}
-          <div className={styles.content}>
-            <p className={styles.intro}>{profile.intro}</p>
+          <div className={styles.row}>
+            <h2 className={styles.rowTitle}>관심 분야</h2>
+            <ul className={styles.interests}>
+              {profile.interests.map((interest) => (
+                <li key={interest}>{interest}</li>
+              ))}
+            </ul>
+          </div>
 
-            <div className={styles.block}>
-              <h3 className={styles.blockTitle}>관심 분야</h3>
-              <ul className={styles.tags}>
-                {profile.interests.map((interest) => (
-                  <li key={interest} className={styles.tag}>
-                    {interest}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className={styles.block}>
-              <h3 className={styles.blockTitle}>기술 스택</h3>
-              <div className={styles.skills}>
-                {profile.skills.map((group) => (
-                  <div key={group.category} className={styles.skillGroup}>
-                    <span className={styles.skillCategory}>{group.category}</span>
-                    <ul className={styles.tags}>
-                      {group.items.map((skill) => (
-                        <li key={skill} className={`${styles.tag} ${styles.skill}`}>
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
+          <div className={styles.row}>
+            <h2 className={styles.rowTitle}>기술 스택</h2>
+            <div className={styles.skills}>
+              {profile.skills.map((group) => (
+                <div key={group.category} className={styles.skillGroup}>
+                  <h3 className={styles.skillCategory}>{group.category}</h3>
+                  <ul className={styles.skillList}>
+                    {group.items.map((skill) => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>

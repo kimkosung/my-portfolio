@@ -23,7 +23,7 @@ export default function Header() {
         className={`${styles.headerContent} ${scrolled ? styles.scrolled : ""}`}
       >
         <Link href="/" className={styles.logo}>
-          <Image src={IMG_URL} alt="Logo" width={76} height={50} />
+          <Image src={IMG_URL} alt="Logo" width={76} height={50} loading="eager" />
         </Link>
 
         <nav className={styles.nav}>

@@ -20,7 +20,7 @@ export const profile = {
   interests: ["AI", "UI/UX 설계", "웹/앱 개발", "오픈소스", "Network"],
   skills: [
     { category: "Frontend", items: ["React", "ReactNative", "Next.js", "TypeScript"] },
-    { category: "Backend", items: ["Spring", "Express", "Node.js"] },
+    { category: "Backend", items: ["Spring", "Node.js", "PostgreSQL"] },
     { category: "Tools", items: ["Git", "GitHub", "GitLab", "Figma", "VS Code", "Slack"] },
   ],
 };

@@ -1,0 +1,120 @@
+.section {
+  --bg: #f1f2f0;
+  --fg: #14161a;
+  --muted: #7b8087;
+  --line: #d6d9db;
+  --accent: #2c39f5;
+
+  padding: clamp(20px, 3.6vw, 56px) 0 clamp(64px, 6vw, 100px);
+  color: var(--fg);
+  background: var(--bg);
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    --bg: #0f1113;
+    --fg: #eeeeea;
+    --muted: #7f848b;
+    --line: #2a2d31;
+    --accent: #8f99ff;
+  }
+}
+
+.section ::selection {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- 상단 굵은 선 (Profile과 동일) ---------- */
+.body {
+  position: relative;
+  border-top: 1px solid var(--line);
+}
+
+.body::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--fg);
+  transform-origin: left center;
+}
+
+.row {
+  border-bottom: 1px solid var(--line);
+  padding: clamp(24px, 3vw, 48px) 0;
+  text-wrap: pretty;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin-bottom: clamp(8px, 1.5vw, 20px);
+}
+
+.text {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- 스크롤로 섹션에 들어올 때 선이 그어짐 ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes draw {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .body::before {
+      animation: draw linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+
+    .row {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 70%;
+    }
+  }
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 880px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

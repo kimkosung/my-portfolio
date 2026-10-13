@@ -3,6 +3,7 @@
   --fg: #14161a;
   --muted: #7b8087;
   --line: #d6d9db;
+  --chip-line: #c2c6c9;
   --accent: #2c39f5;
 
   padding: clamp(80px, 11vw, 152px) 0 clamp(72px, 9vw, 128px);
@@ -20,6 +21,7 @@
     --fg: #eeeeea;
     --muted: #7f848b;
     --line: #2a2d31;
+    --chip-line: #3b4047;
     --accent: #8f99ff;
   }
 }
@@ -35,7 +37,7 @@
   padding: 0 24px;
 }
 
-/* ---------- 상단: 이름/직무 같은 크기의 두 줄로 ---------- */
+/* ---------- 상단: 이름 + 직무를 같은 크기의 두 줄로 ---------- */
 .header {
   margin-bottom: clamp(56px, 8vw, 104px);
 }
@@ -215,13 +217,28 @@
 .skillList {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 24px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: -0.02em;
+}
+
+.skillList li {
+  padding: 6px 14px;
+  line-height: 1.4;
+  border: 1px solid var(--chip-line);
+  border-radius: 10px;
+  transition: color 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skillList li:hover {
+  color: var(--bg);
+  background: var(--fg);
+  border-color: var(--fg);
 }
 
 /* ---------- 로드 시 한 번만: 이름 등장 → 선이 그어지며 본문 ---------- */
@@ -280,6 +297,6 @@
 @media (max-width: 520px) {
   .skillGroup {
     grid-template-columns: minmax(0, 1fr);
-    gap: 6px;
+    gap: 10px;
   }
 }
